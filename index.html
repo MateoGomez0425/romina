@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romina Honeker — Numeróloga | Diseñadora Humana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #C9A96E;
+            --gold-light: #D4C49A;
+            --gold-dark: #A8893E;
+            --gold-shine: #E8D5A3;
+            --cream: #FDF8F0;
+            --cream-dark: #F5EDE0;
+            --brown-dark: #2C1810;
+            --brown-medium: #5C3A2E;
+            --brown-light: #8B6F5C;
+            --white: #FFFFFF;
+            --shadow-gold: rgba(201, 169, 110, 0.25);
+            --shadow-dark: rgba(44, 24, 16, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Arimo', 'Lato', sans-serif;
+            background-color: var(--cream);
+            color: var(--brown-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(201, 169, 110, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(201, 169, 110, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(180deg, var(--brown-dark) 0%, #3D2518 60%, var(--brown-medium) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(201, 169, 110, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 30% 100%, rgba(201, 169, 110, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-decoration {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgba(201, 169, 110, 0.15);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .hero-decoration::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(201, 169, 110, 0.08);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-symbol {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 8px;
+            opacity: 0.8;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: var(--white);
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-line {
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 16px auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--gold-light);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--brown-dark);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: var(--brown-light);
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        /* ===== SCHEDULER ===== */
+        .scheduler {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 30px 24px;
+            box-shadow: 0 4px 30px var(--shadow-dark), 0 1px 3px rgba(0,0,0,0.04);
+            border: 1px solid rgba(201, 169, 110, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scheduler::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .steps-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        .step-dot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        .step-dot.active {
+            background: var(--gold);
+            color: var(--white);
+            box-shadow: 0 2px 12px var(--shadow-gold);
+        }
+
+        .step-dot.completed {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .step-dot.inactive {
+            background: var(--cream-dark);
+            color: var(--brown-light);
+        }
+
+        .step-line {
+            width: 40px;
+            height: 2px;
+            background: var(--cream-dark);
+            transition: background 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        .step-line.active {
+            background: var(--gold);
+        }
+
+        .step-panel {
+            display: none;
+            animation: fadeSlideIn 0.4s ease;
+        }
+
+        .step-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== CALENDAR ===== */
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-nav {
+            background: none;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .calendar-nav:hover:not(:disabled) {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .calendar-nav:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .calendar-month-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--brown-dark);
+            text-transform: capitalize;
+        }
+
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        .weekday-label {
+            text-align: center;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--brown-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 0;
+        }
+
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: 2px solid transparent;
+        }
+
+        .calendar-day:not(.empty):not(.blocked):not(.past):hover {
+            background: var(--cream);
+            border-color: var(--gold-light);
+        }
+
+        .calendar-day:not(.empty):not(.blocked):not(.past).selected {
+            background: var(--gold);
+            color: var(--white);
+            border-color: var(--gold);
+            box-shadow: 0 2px 10px var(--shadow-gold);
+        }
+
+        .calendar-day.empty { cursor: default; }
+
+        .calendar-day.blocked {
+            color: var(--cream-dark);
+            cursor: not-allowed;
+            text-decoration: line-through;
+            opacity: 0.4;
+        }
+
+        .calendar-day.past {
+            color: #ccc;
+            cursor: not-allowed;
+            opacity: 0.4;
+        }
+
+        .calendar-day.today {
+            font-weight: 600;
+            border-color: var(--gold-light);
+        }
+
+        .calendar-note {
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--brown-light);
+            margin-top: 16px;
+            font-style: italic;
+        }
+
+        .calendar-legend {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.65rem;
+            color: var(--brown-light);
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.available { border: 2px solid var(--gold); background: var(--white); }
+        .legend-dot.unavailable { background: #ddd; }
+        .legend-dot.selected-legend { background: var(--gold); }
+
+        /* ===== TIME SLOTS ===== */
+        .time-slots-section { text-align: center; }
+
+        .selected-date-display {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--brown-dark);
+            margin-bottom: 6px;
+        }
+
+        .selected-day-name {
+            font-size: 0.75rem;
+            color: var(--brown-light);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .time-slots-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            max-width: 320px;
+            margin: 0 auto 24px;
+        }
+
+        .time-slot-btn {
+            background: var(--cream);
+            border: 2px solid var(--cream-dark);
+            border-radius: 10px;
+            padding: 14px 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--brown-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .time-slot-btn:hover {
+            border-color: var(--gold);
+            background: rgba(201, 169, 110, 0.08);
+        }
+
+        .time-slot-btn.selected {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--white);
+            box-shadow: 0 2px 10px var(--shadow-gold);
+        }
+
+        .time-slot-btn .slot-period {
+            display: block;
+            font-size: 0.6rem;
+            font-weight: 300;
+            opacity: 0.7;
+            margin-top: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== FORM ===== */
+        .booking-form { text-align: left; }
+
+        .form-group { margin-bottom: 18px; }
+
+        .form-group label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--brown-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid var(--cream-dark);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--brown-dark);
+            background: var(--cream);
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus { border-color: var(--gold); }
+
+        .form-group input::placeholder {
+            color: var(--brown-light);
+            opacity: 0.5;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%238B6F5C'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .booking-summary {
+            background: var(--cream);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(201, 169, 110, 0.15);
+        }
+
+        .summary-title {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--brown-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0;
+            font-size: 0.82rem;
+        }
+
+        .summary-label { color: var(--brown-light); }
+
+        .summary-value {
+            font-weight: 500;
+            color: var(--brown-dark);
+        }
+
+        .summary-divider {
+            height: 1px;
+            background: rgba(201, 169, 110, 0.2);
+            margin: 8px 0;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 4px 15px var(--shadow-gold);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px var(--shadow-gold);
+        }
+
+        .btn-primary:active { transform: translateY(0); }
+
+        .btn-primary:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-back {
+            background: none;
+            border: none;
+            color: var(--brown-light);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            cursor: pointer;
+            padding: 8px 0;
+            margin-bottom: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .btn-back:hover { color: var(--gold-dark); }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 40px 20px 30px;
+            color: var(--brown-light);
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-line {
+            width: 40px;
+            height: 1px;
+            background: var(--gold-light);
+            margin: 0 auto 16px;
+        }
+
+        .footer-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 0.85rem;
+            color: var(--brown-medium);
+            margin-bottom: 4px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 480px) {
+            .hero h1 { font-size: 2.6rem; }
+            .scheduler { padding: 36px 32px; }
+            .calendar-day { font-size: 0.9rem; }
+            .time-slots-grid { grid-template-columns: repeat(2, 1fr); max-width: 360px; }
+        }
+
+        @media (min-width: 768px) {
+            .hero { padding: 80px 40px 70px; }
+            .hero h1 { font-size: 3rem; letter-spacing: 5px; }
+            .hero h2 { font-size: 0.9rem; letter-spacing: 6px; }
+            .main-content { padding: 50px 40px 70px; }
+            .scheduler { padding: 40px 40px; }
+            .section-title { font-size: 1.7rem; }
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--cream); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-light); border-radius: 3px; }
+
+        /* ===== SUCCESS ===== */
+        .success-message { text-align: center; padding: 30px 10px; }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--white);
+            box-shadow: 0 4px 20px var(--shadow-gold);
+        }
+
+        .success-message h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--brown-dark);
+            margin-bottom: 10px;
+        }
+
+        .success-message p {
+            font-size: 0.85rem;
+            color: var(--brown-light);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .btn-new-booking {
+            background: transparent;
+            border: 1.5px solid var(--gold);
+            color: var(--gold-dark);
+        }
+
+        .btn-new-booking:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .btn-loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .error-message {
+            background: #FFF0F0;
+            border: 1px solid #E8C4C4;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            font-size: 0.8rem;
+            color: #8B4040;
+            display: none;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+    </style>
+    <script src="config.js"></script>
+</head>
+<body>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+        <div class="hero-decoration"></div>
+        <div class="hero-symbol">✦ ✦ ✦</div>
+        <h1>Romina Honeker</h1>
+        <div class="hero-line"></div>
+        <h2>Numeróloga · Diseñadora Humana</h2>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+        <h2 class="section-title">Reservá tu sesión</h2>
+        <p class="section-subtitle">Elegí fecha, horario y tipo de consulta</p>
+
+        <div class="scheduler">
+            <div class="steps-indicator">
+                <div class="step-dot active" id="stepDot1">1</div>
+                <div class="step-line" id="stepLine1"></div>
+                <div class="step-dot inactive" id="stepDot2">2</div>
+                <div class="step-line" id="stepLine2"></div>
+                <div class="step-dot inactive" id="stepDot3">3</div>
+            </div>
+
+            <!-- STEP 1: Calendar -->
+            <div class="step-panel active" id="step1">
+                <div class="calendar-header">
+                    <button class="calendar-nav" id="prevMonth" title="Mes anterior">‹</button>
+                    <span class="calendar-month-title" id="monthTitle"></span>
+                    <button class="calendar-nav" id="nextMonth" title="Mes siguiente">›</button>
+                </div>
+                <div class="calendar-weekdays">
+                    <span class="weekday-label">Lun</span>
+                    <span class="weekday-label">Mar</span>
+                    <span class="weekday-label">Mié</span>
+                    <span class="weekday-label">Jue</span>
+                    <span class="weekday-label">Vie</span>
+                    <span class="weekday-label">Sáb</span>
+                    <span class="weekday-label">Dom</span>
+                </div>
+                <div class="calendar-days" id="calendarDays"></div>
+                <div class="calendar-legend">
+                    <div class="legend-item"><div class="legend-dot available"></div><span>Disponible</span></div>
+                    <div class="legend-item"><div class="legend-dot selected-legend"></div><span>Seleccionado</span></div>
+                    <div class="legend-item"><div class="legend-dot unavailable"></div><span>No disponible</span></div>
+                </div>
+                <p class="calendar-note">Solo se muestran los próximos 60 días</p>
+            </div>
+
+            <!-- STEP 2: Time Slots -->
+            <div class="step-panel" id="step2">
+                <button class="btn-back" id="backToStep1">← Volver al calendario</button>
+                <div class="time-slots-section">
+                    <p class="selected-date-display" id="selectedDateDisplay"></p>
+                    <p class="selected-day-name" id="selectedDayName"></p>
+                    <div class="time-slots-grid" id="timeSlotsGrid"></div>
+                    <button class="btn btn-primary" id="confirmTime" disabled>Continuar</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: Confirmation Form -->
+            <div class="step-panel" id="step3">
+                <button class="btn-back" id="backToStep2">← Volver a horarios</button>
+                <div class="booking-summary">
+                    <div class="summary-title">Resumen de tu turno</div>
+                    <div class="summary-row">
+                        <span class="summary-label">Fecha</span>
+                        <span class="summary-value" id="summaryDate"></span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Horario</span>
+                        <span class="summary-value" id="summaryTime"></span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-row">
+                        <span class="summary-label">Duración</span>
+                        <span class="summary-value">60 minutos</span>
+                    </div>
+                </div>
+                <div class="error-message" id="errorMsg"></div>
+                <form class="booking-form" id="bookingForm" onsubmit="return false;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Nombre</label>
+                            <input type="text" id="firstName" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Apellido</label>
+                            <input type="text" id="lastName" placeholder="Tu apellido" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" placeholder="+54 11 1234-5678" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sessionType">Tipo de sesión</label>
+                        <select id="sessionType" required>
+                            <option value="" disabled selected>Elegí una opción</option>
+                            <option value="Numerología">Numerología</option>
+                            <option value="Diseño Humano">Diseño Humano</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="confirmBooking">Confirmar turno</button>
+                </form>
+            </div>
+
+            <!-- STEP 4: Success -->
+            <div class="step-panel" id="step4">
+                <div class="success-message">
+                    <div class="success-icon">✓</div>
+                    <h3>¡Turno confirmado!</h3>
+                    <p>Tu sesión fue agendada exitosamente.<br>Recibirás un email de confirmación.</p>
+                    <button class="btn btn-primary btn-new-booking" id="newBooking">Reservar otro turno</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <p class="footer-name">Romina Honeker</p>
+        <p>Numeróloga · Diseñadora Humana</p>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+    (function() {
+        'use strict';
+
+        // ===================================================================
+        // CONFIGURACIÓN — Cargada desde config.js (NO hardcodeada)
+        // ===================================================================
+var SCRIPT_URL = typeof APP_SCRIPT_URL !== 'undefined' ? APP_SCRIPT_URL : '';
+        // ===================================================================
+
+        var DURATION_MINUTES = 60;
+        var MAX_DAYS_AHEAD = 60;
+
+        var WEEKDAY_NAMES = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+        var MONTH_NAMES = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                           'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+        // State
+        var currentDate = new Date();
+        var currentMonth = currentDate.getMonth();
+        var currentYear = currentDate.getFullYear();
+        var selectedDate = null;
+        var selectedTimeSlot = null;
+        var minDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+        var maxDate = new Date(minDate.getTime() + MAX_DAYS_AHEAD * 24 * 60 * 60 * 1000);
+
+        // DOM
+        var calendarDays = document.getElementById('calendarDays');
+        var monthTitle = document.getElementById('monthTitle');
+        var prevMonthBtn = document.getElementById('prevMonth');
+        var nextMonthBtn = document.getElementById('nextMonth');
+        var stepPanels = document.querySelectorAll('.step-panel');
+        var stepDots = [document.getElementById('stepDot1'), document.getElementById('stepDot2'), document.getElementById('stepDot3')];
+        var stepLines = [document.getElementById('stepLine1'), document.getElementById('stepLine2')];
+
+        // ===== CALENDAR =====
+        function renderCalendar() {
+            monthTitle.textContent = MONTH_NAMES[currentMonth] + ' ' + currentYear;
+
+            var today = new Date();
+            prevMonthBtn.disabled = (currentMonth === today.getMonth() && currentYear === today.getFullYear());
+
+            var nextMonthDate = new Date(currentYear, currentMonth + 1, 1);
+            nextMonthBtn.disabled = (nextMonthDate > new Date(maxDate.getFullYear(), maxDate.getMonth() + 1, 0));
+
+            var firstDay = new Date(currentYear, currentMonth, 1);
+            var startDayOfWeek = (firstDay.getDay() + 6) % 7; // Monday = 0
+            var daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            calendarDays.innerHTML = '';
+
+            for (var i = 0; i < startDayOfWeek; i++) {
+                var emptyDiv = document.createElement('div');
+                emptyDiv.className = 'calendar-day empty';
+                calendarDays.appendChild(emptyDiv);
+            }
+
+            for (var day = 1; day <= daysInMonth; day++) {
+                var dayDiv = document.createElement('div');
+                dayDiv.className = 'calendar-day';
+                dayDiv.textContent = day;
+
+                var dayDate = new Date(currentYear, currentMonth, day);
+                var dayOfWeek = dayDate.getDay();
+                var isToday = dayDate.toDateString() === today.toDateString();
+                var isPast = dayDate < minDate;
+                var isBeyondMax = dayDate > maxDate;
+                var isSunday = dayOfWeek === 0;
+
+                if (isToday) dayDiv.classList.add('today');
+
+                if (isPast || isBeyondMax || isSunday) {
+                    dayDiv.classList.add('blocked');
+                } else {
+                    (function(d, el) {
+                        el.addEventListener('click', function() { selectDate(d, el); });
+                    })(dayDate, dayDiv);
+                }
+
+                if (selectedDate && dayDate.toDateString() === selectedDate.toDateString()) {
+                    dayDiv.classList.add('selected');
+                }
+
+                calendarDays.appendChild(dayDiv);
+            }
+        }
+
+        function selectDate(date, element) {
+            var prev = calendarDays.querySelector('.selected');
+            if (prev) prev.classList.remove('selected');
+            element.classList.add('selected');
+            selectedDate = date;
+            setTimeout(function() {
+                goToStep(2);
+                renderTimeSlots();
+            }, 200);
+        }
+
+        // ===== TIME SLOTS =====
+        function getAvailableSlots(date) {
+            var dayOfWeek = date.getDay();
+            if (dayOfWeek === 0) return [];
+
+            if (dayOfWeek === 6) {
+                return [
+                    { hour: 10, minute: 0, label: '10:00', period: 'AM' },
+                    { hour: 12, minute: 0, label: '12:00', period: 'PM' }
+                ];
+            }
+
+            var slots = [
+                { hour: 10, minute: 0, label: '10:00', period: 'AM' },
+                { hour: 13, minute: 0, label: '13:00', period: 'PM' },
+                { hour: 15, minute: 0, label: '15:00', period: 'PM' },
+                { hour: 17, minute: 0, label: '17:00', period: 'PM' }
+            ];
+
+            if (dayOfWeek === 1 || dayOfWeek === 4 || dayOfWeek === 5) {
+                slots.push({ hour: 19, minute: 0, label: '19:00', period: 'PM' });
+            }
+
+            return slots;
+        }
+
+        function renderTimeSlots() {
+            if (!selectedDate) return;
+
+            var dayName = WEEKDAY_NAMES[selectedDate.getDay()];
+            var dateStr = selectedDate.getDate() + ' de ' + MONTH_NAMES[selectedDate.getMonth()] + ' ' + selectedDate.getFullYear();
+
+            document.getElementById('selectedDateDisplay').textContent = dateStr;
+            document.getElementById('selectedDayName').textContent = dayName;
+
+            var grid = document.getElementById('timeSlotsGrid');
+            grid.innerHTML = '';
+            selectedTimeSlot = null;
+            document.getElementById('confirmTime').disabled = true;
+
+            var slots = getAvailableSlots(selectedDate);
+
+            slots.forEach(function(slot) {
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'time-slot-btn';
+                btn.innerHTML = slot.label + '<span class="slot-period">' + slot.period + '</span>';
+                btn.addEventListener('click', function() {
+                    grid.querySelectorAll('.time-slot-btn').forEach(function(b) { b.classList.remove('selected'); });
+                    btn.classList.add('selected');
+                    selectedTimeSlot = slot;
+                    document.getElementById('confirmTime').disabled = false;
+                });
+                grid.appendChild(btn);
+            });
+        }
+
+        // ===== STEP NAVIGATION =====
+        function goToStep(step) {
+            stepPanels.forEach(function(panel, index) {
+                panel.classList.toggle('active', index === step - 1);
+            });
+
+            for (var i = 0; i < 3; i++) {
+                if (i < step - 1) {
+                    stepDots[i].className = 'step-dot completed';
+                    stepDots[i].textContent = '✓';
+                } else if (i === step - 1) {
+                    stepDots[i].className = 'step-dot active';
+                    stepDots[i].textContent = i + 1;
+                } else {
+                    stepDots[i].className = 'step-dot inactive';
+                    stepDots[i].textContent = i + 1;
+                }
+            }
+
+            for (var j = 0; j < 2; j++) {
+                stepLines[j].className = j < step - 1 ? 'step-line active' : 'step-line';
+            }
+
+            document.querySelector('.scheduler').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function updateSummary() {
+            if (!selectedDate || !selectedTimeSlot) return;
+            var dateStr = selectedDate.getDate() + ' de ' + MONTH_NAMES[selectedDate.getMonth()] + ' ' + selectedDate.getFullYear();
+            var dayName = WEEKDAY_NAMES[selectedDate.getDay()];
+            document.getElementById('summaryDate').textContent = dayName + ' ' + dateStr;
+            document.getElementById('summaryTime').textContent = selectedTimeSlot.label + ' ' + selectedTimeSlot.period;
+        }
+
+        // ===== SEND TO GOOGLE APPS SCRIPT =====
+        function sendToCalendar() {
+            var pad = function(n) { return n < 10 ? '0' + n : '' + n; };
+
+            var year = selectedDate.getFullYear();
+            var month = pad(selectedDate.getMonth() + 1);
+            var day = pad(selectedDate.getDate());
+            var startHour = pad(selectedTimeSlot.hour);
+            var startMin = pad(selectedTimeSlot.minute);
+
+            var endHour = selectedTimeSlot.hour;
+            var endMin = selectedTimeSlot.minute + DURATION_MINUTES;
+            if (endMin >= 60) { endHour += Math.floor(endMin / 60); endMin = endMin % 60; }
+
+            var startISO = year + '-' + month + '-' + day + 'T' + startHour + ':' + startMin + ':00-03:00';
+            var endISO = year + '-' + month + '-' + day + 'T' + pad(endHour) + ':' + pad(endMin) + ':00-03:00';
+
+            var payload = {
+                firstName: document.getElementById('firstName').value.trim(),
+                lastName: document.getElementById('lastName').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                sessionType: document.getElementById('sessionType').value,
+                startISO: startISO,
+                endISO: endISO
+            };
+
+            var submitBtn = document.getElementById('confirmBooking');
+            var errorMsg = document.getElementById('errorMsg');
+            submitBtn.textContent = 'Agendando...';
+            submitBtn.classList.add('btn-loading');
+            errorMsg.classList.remove('visible');
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(function() {
+                submitBtn.textContent = 'Confirmar turno';
+                submitBtn.classList.remove('btn-loading');
+                goToStep(4);
+            })
+            .catch(function(err) {
+                submitBtn.textContent = 'Confirmar turno';
+                submitBtn.classList.remove('btn-loading');
+                errorMsg.textContent = 'Hubo un error al agendar el turno. Intentá nuevamente.';
+                errorMsg.classList.add('visible');
+                console.error('Error:', err);
+            });
+        }
+
+        // ===== EVENT LISTENERS =====
+        prevMonthBtn.addEventListener('click', function() {
+            currentMonth--;
+            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+            renderCalendar();
+        });
+
+        nextMonthBtn.addEventListener('click', function() {
+            currentMonth++;
+            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+            renderCalendar();
+        });
+
+        document.getElementById('confirmTime').addEventListener('click', function() {
+            if (selectedTimeSlot) { updateSummary(); goToStep(3); }
+        });
+
+        document.getElementById('backToStep1').addEventListener('click', function() { goToStep(1); });
+        document.getElementById('backToStep2').addEventListener('click', function() { goToStep(2); });
+
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var firstName = document.getElementById('firstName').value.trim();
+            var lastName = document.getElementById('lastName').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var phone = document.getElementById('phone').value.trim();
+            var sessionType = document.getElementById('sessionType').value;
+
+            if (!firstName || !lastName || !email || !phone || !sessionType) return;
+
+            if (!SCRIPT_URL) {
+                var errorMsg = document.getElementById('errorMsg');
+                errorMsg.textContent = 'Configurá la URL del Google Apps Script en el archivo config.js.';
+                errorMsg.classList.add('visible');
+                return;
+            }
+
+            sendToCalendar();
+        });
+
+        document.getElementById('newBooking').addEventListener('click', function() {
+            selectedDate = null;
+            selectedTimeSlot = null;
+            document.getElementById('bookingForm').reset();
+            document.getElementById('errorMsg').classList.remove('visible');
+            var prev = calendarDays.querySelector('.selected');
+            if (prev) prev.classList.remove('selected');
+            goToStep(1);
+            renderCalendar();
+        });
+
+        // ===== INIT =====
+        renderCalendar();
+
+    })();
+    </script>
+
+</body>
+</html>

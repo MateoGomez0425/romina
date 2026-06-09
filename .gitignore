@@ -1,0 +1,10 @@
+# Configuración sensible (no subir a GitHub)
+config.js
+
+# Google Apps Script (contiene emails y CALENDAR_ID)
+code.gs
+appsscript.json
+
+# Sistema
+.DS_Store
+Thumbs.db
