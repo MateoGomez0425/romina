@@ -1073,11 +1073,12 @@ var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwgV96ghJt_0pMWdHD1epe
 
             fetch(SCRIPT_URL, {
                 method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
                 body: JSON.stringify(payload)
             })
-            .then(function() {
+            .then(function(response) { return response.text(); })
+            .then(function(text) {
+                console.log('Respuesta del script:', text);
                 submitBtn.textContent = 'Confirmar turno';
                 submitBtn.classList.remove('btn-loading');
                 goToStep(4);
