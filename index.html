@@ -1071,24 +1071,49 @@ var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwgV96ghJt_0pMWdHD1epe
             submitBtn.classList.add('btn-loading');
             errorMsg.classList.remove('visible');
 
+            console.log('Enviando payload:', JSON.stringify(payload, null, 2));
+
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
                 body: JSON.stringify(payload)
             })
-            .then(function(response) { return response.text(); })
+            .then(function(response) {
+                console.log('HTTP Status:', response.status);
+                console.log('Response type:', response.type);
+                return response.text();
+            })
             .then(function(text) {
-                console.log('Respuesta del script:', text);
+                console.log('Respuesta cruda del script:', text);
                 submitBtn.textContent = 'Confirmar turno';
                 submitBtn.classList.remove('btn-loading');
-                goToStep(4);
+
+                // Intentar parsear la respuesta como JSON
+                var result;
+                try {
+                    result = JSON.parse(text);
+                } catch(parseErr) {
+                    console.error('No se pudo parsear la respuesta:', parseErr);
+                    errorMsg.textContent = 'Respuesta inesperada del servidor. Verificá que la URL del script sea correcta.';
+                    errorMsg.classList.add('visible');
+                    return;
+                }
+
+                if (result.success) {
+                    console.log('Turno creado exitosamente, eventId:', result.eventId);
+                    goToStep(4);
+                } else {
+                    console.error('El script devolvió error:', result.error);
+                    errorMsg.textContent = 'Error del servidor: ' + (result.error || 'Error desconocido');
+                    errorMsg.classList.add('visible');
+                }
             })
             .catch(function(err) {
                 submitBtn.textContent = 'Confirmar turno';
                 submitBtn.classList.remove('btn-loading');
-                errorMsg.textContent = 'Hubo un error al agendar el turno. Intentá nuevamente.';
+                errorMsg.textContent = 'Error de conexión: ' + err.message + '. Verificá tu conexión a internet y la URL del script.';
                 errorMsg.classList.add('visible');
-                console.error('Error:', err);
+                console.error('Error de fetch:', err);
             });
         }
 
