@@ -716,7 +716,6 @@
             display: block;
         }
     </style>
-    <script src="config.js"></script>
 </head>
 <body>
 
@@ -857,7 +856,7 @@
         // ===================================================================
         // CONFIGURACIÓN — Cargada desde config.js (NO hardcodeada)
         // ===================================================================
-var SCRIPT_URL = typeof APP_SCRIPT_URL !== 'undefined' ? APP_SCRIPT_URL : '';
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwG5bFcBSzSnkHALNrpjOOQ3j0YM2hE8W4wUDtM_9ZmYaKbBnrguo216j_E5qX8zRM9/exec';
         // ===================================================================
 
         var DURATION_MINUTES = 60;
@@ -1123,9 +1122,9 @@ var SCRIPT_URL = typeof APP_SCRIPT_URL !== 'undefined' ? APP_SCRIPT_URL : '';
 
             if (!firstName || !lastName || !email || !phone || !sessionType) return;
 
-            if (!SCRIPT_URL) {
+            if (!SCRIPT_URL || SCRIPT_URL === 'TU_URL_DE_GOOGLE_APPS_SCRIPT_AQUI') {
                 var errorMsg = document.getElementById('errorMsg');
-                errorMsg.textContent = 'Configurá la URL del Google Apps Script en el archivo config.js.';
+                errorMsg.textContent = 'Configurá la URL del Google Apps Script en el archivo index.html (buscar SCRIPT_URL).';
                 errorMsg.classList.add('visible');
                 return;
             }
